@@ -3,7 +3,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{algorithm}
-
+\usepackage{algorithmic}
 \title{TP - LA CLASSE NP}
 \author{Matthieu Caron et Armand Bour}
 \date{6 novembre}
@@ -32,27 +32,26 @@ voisine est inférieur à l.
 Le certificat est une liste de villes sans doublon donc la taille du certificat est majoré
 par le nombre totale de villes donc $[certificat]<=n$.
 
+
+for i = 0 ; i < t.length - 1 ; i++ {
+  
+
+
+
 \begin{algorithm}
-\caption{Calculate $y = x^n$}
-\REQUIRE $n \geq 0 \vee x \neq 0$
-\ENSURE $y = x^n$
-\STATE $y \leftarrow 1$
-\IF{$n < 0$}
-\STATE $X \leftarrow 1 / x$
-\STATE $N \leftarrow -n$
-\ELSE
-\STATE $X \leftarrow x$
-\STATE $N \leftarrow n$
-\ENDIF
-\WHILE{$N \neq 0$}
-\IF{$N$ is even}
-\STATE $X \leftarrow X \times X$
-\STATE $N \leftarrow N / 2$
-\ELSE[$N$ is odd]
-\STATE $y \leftarrow y \times X$
-\STATE $N \leftarrow N - 1$
-\ENDIF
+\caption{Certicat tournée plus petite que l}
+\begin{algorithmic}
+\REQUIRE $D, l, t$
+\ENSURE $boolean$
+\STATE $somme \leftarrow 0$
+\STATE $i \leftarrow 0$
+\WHILE{$i < t.length$}
+  \STATE $somme \leftarrow somme + D[t[i],t[i+1]] $
+  \STATE $i \leftarrow i + 1 $
 \ENDWHILE
+\STATE $somme \leftarrow somme + D[t[i],t[0]] $
+\RETURN $somme$ 
+\end{algorithmic}
 \end{algorithm}
 
 \end{document}

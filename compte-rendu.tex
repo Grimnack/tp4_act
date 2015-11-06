@@ -3,7 +3,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{algorithm}
-
+\usepackage{algorithmic}
 \title{TP - LA CLASSE NP}
 \author{Matthieu Caron et Armand Bour}
 \date{6 novembre}
@@ -32,6 +32,25 @@ voisine est inférieur à l.
 Le certificat est une liste de villes sans doublon donc la taille du certificat est majoré
 par le nombre totale de villes donc $[certificat]<=n$.
 
+
+
+\begin{algorithm}
+\caption{Certicat tournée plus petite que l}
+\begin{algorithmic}
+\REQUIRE $D, l, t$
+\ENSURE $boolean$
+\STATE $somme \leftarrow 0$
+\STATE $i \leftarrow 0$
+\WHILE{$i < t.length$}
+  \STATE $somme \leftarrow somme + D[t[i],t[i+1]] $
+  \STATE $i \leftarrow i + 1 $
+\ENDWHILE
+\STATE $somme \leftarrow somme + D[t[i],t[0]] $
+\RETURN $somme \leq l $ 
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Question 2}
 
 
 \end{document}
