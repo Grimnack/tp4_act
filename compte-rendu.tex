@@ -1,0 +1,37 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage{algorithm}
+
+\title{TP - LA CLASSE NP}
+\author{Matthieu Caron et Armand Bour}
+\date{6 novembre}
+
+\pdfinfo{%
+  /Title    ()
+  /Author   ()
+  /Creator  ()
+  /Producer ()
+  /Subject  ()
+  /Keywords ()
+}
+
+\begin{document}
+\maketitle
+
+\paragraph{Question 1}
+Un certificat est un resultat qui montre qu'on répond Oui au problème,
+Et qui peut être vérifié en temps polynomial.
+
+L'idée c est de proposer une configuration qui peut être vérifiée.
+Donc on donne une ``tournée'' sous forme de liste de villes, sans doublon,
+et on pourra verifier en temps polynomial si la somme des distances entre chaque ville
+voisine est inférieur à l.
+
+Le certificat est une liste de villes sans doublon donc la taille du certificat est majoré
+par le nombre totale de villes donc $[certificat]<=n$.
+
+
+
+\end{document}
