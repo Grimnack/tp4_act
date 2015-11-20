@@ -33,10 +33,6 @@ Le certificat est une liste de villes sans doublon donc la taille du certificat 
 par le nombre totale de villes donc $[certificat]<=n$.
 
 
-for i = 0 ; i < t.length - 1 ; i++ {
-  
-
-
 
 \begin{algorithm}
 \caption{Certicat tournée plus petite que l}
@@ -50,8 +46,13 @@ for i = 0 ; i < t.length - 1 ; i++ {
   \STATE $i \leftarrow i + 1 $
 \ENDWHILE
 \STATE $somme \leftarrow somme + D[t[i],t[0]] $
-\RETURN $somme$ 
+\RETURN $somme \leq l $ 
 \end{algorithmic}
 \end{algorithm}
+
+\paragraph{Question 2}
+
+\paragraph{Question 3}
+
 
 \end{document}
