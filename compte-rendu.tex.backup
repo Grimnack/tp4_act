@@ -51,8 +51,41 @@ par le nombre totale de villes donc $[certificat]<=n$.
 \end{algorithm}
 
 \paragraph{Question 2}
+Dans l'algorithme 2, random(i) crée un nombre aléatoire entre 0 et i-1
+
+\begin{algorithm}
+\caption{Generer certificat Aléatoire}
+\begin{algorithmic}
+\REQUIRE $n$
+\ENSURE $certicat$
+\STATE $certicat \leftarrow [0:n-1] $
+\FOR{$i=n-1~downto~1$}
+  \STATE $index \leftarrow random(i)$
+  \STATE $tmp \leftarrow certicat[i] $
+  \STATE $certicat[i]  \leftarrow certicat[index] $
+  \STATE $certicat[index] \leftarrow tmp $
+\ENDFOR
+\RETURN $certicat$
+\end{algorithmic}
+\end{algorithm}
+
 
 \paragraph{Question 3}
+Il  y a $n!$ certificats possibles. Du coup pour enumerer tous les certificats,
 
+\begin{algorithm}
+\caption{enumeration}
+\begin{algorithmic}
+\REQUIRE $listeVilles$
+\ENSURE $listeCertificats$
+\FORALL{$ville~in~listeVilles$}
+  \STATE $sousListe \leftarrow enumeration(listeVilles - ville)$
+\ENDFOR
+\RETURN $certicat$
+\end{algorithmic}
+\end{algorithm}
+
+3.3 il faut un algorithm qui verifie pour chaque certificat généré par la fonction enumeration si il y a un
+certificat correcte, si oui il y a une solution au pb. Cet algo est dans PSPACE puisqu'il génère une liste de certificats de taille exponentielle.
 
 \end{document}
