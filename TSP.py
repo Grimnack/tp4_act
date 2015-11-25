@@ -9,6 +9,12 @@ def monRemove(liste, element):
             res.append(item)
     return res 
 
+def ajoutEnTete(liste,element):
+    res = [element]
+    for item in liste :
+        res.append(item)
+    return res
+
 class TSP(object):
     """Travelling Salesman Problem"""
     def __init__(self, nVilles, matrice):
@@ -35,12 +41,14 @@ class TSP(object):
 
     def enumerateCertificat(self, listeVilles) :
         if len(listeVilles) <= 1 :
-            return listeVilles
+            return [listeVilles]
         listeCertificats = []
         for ville in listeVilles :
-            sousListe = monRemove(listeVilles,ville)
-            listeCertificats.append(sousListe.insert(0,ville))
+            sousListes = self.enumerateCertificat(monRemove(listeVilles,ville)) 
+            for sousListe in sousListes :
+                listeCertificats.append(ajoutEnTete(sousListe,ville)) 
         return listeCertificats
+                
                 
 
 tsp = TSP(4,[[0,2,5,7],[7,0,8,1],[2,1,0,9],[2,2,8,0]]) 
@@ -62,4 +70,5 @@ tsp = TSP(4,[[0,2,5,7],[7,0,8,1],[2,1,0,9],[2,2,8,0]])
 shortTSP = TSP(3,[[0,2,5,7],[7,0,8,1],[2,1,0,9],[2,2,8,0]])
 # test de enumerateCertificat
 
-print shortTSP.enumerateCertificat([0,1])
+print shortTSP.enumerateCertificat([0,1,2,4])
+
