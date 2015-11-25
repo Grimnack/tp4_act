@@ -69,6 +69,39 @@ def creeDepuisFichier(f) :
     data = space['data']
     return TSP(data['nVilles'],data['matrice'],data['longueurMax'])
 
+class HamiltonCycle(object):
+    """classe HamiltonCycle un peu bidon juste pour montrer la transformation
+    en TSP avec en attributs une matrice de bool et un int le nombre de sommets"""
+    def __init__(self, nbSommets, arcs):
+        super(HamiltonCycle, self).__init__()
+        self.nbSommets = nbSommets
+        self.matricebool = arcs
+
+    def matriceInt(self) :
+        matriceInt = []
+        for ligne in self.matricebool :
+            ligneInt = []
+            for element in ligne:
+                if element :
+                    ligneInt.append(1) 
+                else :
+                    ligneInt.append(nbSommets+1)
+            matriceInt.append(ligneInt)
+        return matriceInt
+
+    def fileToHamiltonCycle(f) :
+        pass
+
+    def reductToTSP() :
+        return TSP(self.nbSommets, self.matriceInt(), self.nbSommets)
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
     result = parser.parse_args()
     tsp = creeDepuisFichier(result.tsp)
