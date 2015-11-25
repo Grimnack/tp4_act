@@ -96,6 +96,23 @@ Il  y a $n!$ certificats possibles. Du coup pour enumerer tous les certificats,
 certificat correcte, si oui il y a une solution au pb. Cet algo est dans PSPACE puisqu'il génère une liste de certificats de taille exponentielle.
 
 \paragraph{Question 4}
+\subparagraph{4.1}
 une instance du probleme d' HamiltonCycle se reduit polynomialement dans TSP puisqu'on peut transformer un probleme hamiltonien en un probleme TPS,
 nombre de sommet devient nombre de villes, la matrice reste la meme, et le chemin hamiltonien devient le certicat.
+
+\subparagraph{4.3}
+Si il existe une réduction polynomiale de Hamilton Cycle vers TSP, ça veut dire que TSP est plus dur que Hamilton Cycle.
+
+\subparagraph{4.4}
+Je ne pense pas que l'inverse soit possible car TSP est plus complexe, en effet chaque arc du graphe possède un poids, ce qui ne peut pas facilement 
+être transformé... 
+
+\paragraphe{Question 5}
+\subparagraph{5.1}
+Il est possible de réduire l'instance de HamiltonPath dans HamiltonCycle puisque c est la meme instance du problème, simplement les tests sont plus strict.
+
+\subparagraph{5.3}
+Si on peut transformer un probleme HamiltonPath en un probleme HamiltonCycle et un probleme HamiltonCycle en un problème TSP, alors de bout en bout on peut 
+transformer un problème HamiltonPath en un problème TSP.
+
 \end{document}
