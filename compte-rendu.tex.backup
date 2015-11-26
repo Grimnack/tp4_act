@@ -78,10 +78,17 @@ Il  y a $n!$ certificats possibles. Du coup pour enumerer tous les certificats,
 \begin{algorithmic}
 \REQUIRE $listeVilles$
 \ENSURE $listeCertificats$
+\IF{$len(listeVilles)\leq 1$}
+  \RETURN $listeVilles$
+\ENDIF
+\STATE $listeCertificats \leftarrow [~]$
 \FORALL{$ville~in~listeVilles$}
-  \STATE $sousListe \leftarrow enumeration(listeVilles - ville)$
+  \STATE $sousListes \leftarrow enumeration(listeVilles - ville)$
+  \FORALL {$sousListe~in~sousListes $}
+    \STATE $listeCertificats.append(ajouteEnTete(ville,sousListe)) $
+  \ENDFOR
 \ENDFOR
-\RETURN $certicat$
+\RETURN $listeCertificats$
 \end{algorithmic}
 \end{algorithm}
 

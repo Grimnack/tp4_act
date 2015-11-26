@@ -75,7 +75,7 @@ class HamiltonCycle(object):
     def __init__(self, nbSommets, arcs):
         super(HamiltonCycle, self).__init__()
         self.nbSommets = nbSommets
-        self.matricebool = arcs
+        self.matricebool = arcs[:]
 
     def matriceInt(self) :
         matriceInt = []
@@ -92,8 +92,29 @@ class HamiltonCycle(object):
     def fileToHamiltonCycle(f) :
         pass
 
-    def reductToTSP() :
+    def hamiltonCycleToTSP() :
         return TSP(self.nbSommets, self.matriceInt(), self.nbSommets)
+
+
+class HamiltonPath(object):
+    """docstring for HamiltonPath"""
+    def __init__(self, nbSommets, arcs):
+        super(HamiltonPath, self).__init__()
+        self.nbSommets = nbSommets
+        self.matricebool = arcs[:]
+
+    def hamiltonPathToCycle(self) :
+        newmatrice = self.matricebool[:]
+        for ligne in matricebool :
+            ligne.append(True)
+        newmatrice.append([True]*(self.nbSommets+1))
+        return HamiltonCycle(self.nbSommets+1,newmatrice)
+
+    def hamiltonPathToTSP(self) :
+        return self.hamiltonPathToCycle.hamiltonCycleToTSP
+                
+
+    
 
 
 
