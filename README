@@ -1,0 +1,38 @@
+TP TSP Matthieu Caron et Armand Bour
+
+Tous les programmes sont codés dans TSP.py en python 2.7 (bug si python 3)
+Il y a bien entendu un main comme c'était demandé avec 3 options :
+
+/////////////////////////
+Mode Verification
+/////////////////////////
+
+exemples :
+python TSP.py --verification 0 1 2 3
+
+python TSP.py --verification 0 2 1 3
+
+
+
+
+/////////////////////////
+Mode Exhaustif
+/////////////////////////
+
+python TSP.py --exhaustif
+
+
+
+
+/////////////////////////
+Mode Non Deterministic
+/////////////////////////
+
+python TSP.py --nd
+
+////////////////////////////////////////
+Il existe aussi une option --tsp pour creer un TSP depuis un fichier *.py
+Pour voir la structure : probleme.py est le fichier par defaut.
+
+Pour la partie HamiltonCycle et HamiltonPath, les fonctions sont implémentées mais pas testées, 
+car pas eu le temps de faire une fonction pour créer un HamiltonCycle depuis un fichier.
